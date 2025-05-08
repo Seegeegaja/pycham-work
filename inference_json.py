@@ -1,13 +1,12 @@
 from http.client import responses
-
 from numpy.ma.core import outer
 from openai import Client
-
-import config
 import prompt_template
 from inference import client
+import os
+OPEN_API_KEY = os.getenv("OPEN_API_KEY")
 
-client = Client(api_key=config.OPEN_API_KEY)
+client = Client(api_key=OPEN_API_KEY)
 
 def inference_json(review):
     prompt = prompt_template.prompt_question_json.format(review=review)

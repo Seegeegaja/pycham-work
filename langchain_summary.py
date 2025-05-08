@@ -1,4 +1,3 @@
-from langchain.chains.question_answering.map_rerank_prompt import output_parser
 from langchain_core.output_parsers import PydanticOutputParser
 from langchain_core.prompts import PromptTemplate
 from langchain_openai import ChatOpenAI
@@ -6,8 +5,8 @@ from openai import Client, api_key
 from pydantic import BaseModel
 
 from prompt_template import prompt_summary_langchain
-from config import OPEN_API_KEY
-
+import os
+OPEN_API_KEY = os.getenv("OPEN_API_KEY")
 api_key = OPEN_API_KEY
 
 # json 결과를 담을 클레스 생성

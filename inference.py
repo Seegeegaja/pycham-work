@@ -1,8 +1,10 @@
-from openai import Client
-import config
-import prompt_template
+import os
 
-client = Client(api_key=config.OPEN_API_KEY)
+from openai import Client
+import prompt_template
+OPEN_API_KEY = os.getenv("OPEN_API_KEY")
+
+client = Client(api_key=OPEN_API_KEY)
 
 def inference(review):
 #     프롬프트 생성

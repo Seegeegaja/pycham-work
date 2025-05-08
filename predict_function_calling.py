@@ -1,10 +1,9 @@
 import json
-
 from openai import Client
-import config
-from config import OPEN_API_KEY
 from inference import client
 from prompt_template import prompt_function_calling
+import os
+OPEN_API_KEY = os.getenv("OPEN_API_KEY")
 
 client = Client(api_key=OPEN_API_KEY)
 

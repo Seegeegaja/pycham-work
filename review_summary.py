@@ -1,8 +1,9 @@
 import json
-
 from openai import Client
-from config import OPEN_API_KEY
 from prompt_template import prompt_summary ,prompt_summary_langchain
+import os
+OPEN_API_KEY = os.getenv("OPEN_API_KEY")
+
 client = Client(api_key=OPEN_API_KEY)
 
 def summary(reviews):
